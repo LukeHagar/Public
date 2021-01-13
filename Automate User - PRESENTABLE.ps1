@@ -121,7 +121,7 @@ function New-Employee
 			city		   = "Company Sales"
 			number		   = " "
 			street		   = " "
-			zip		       = " "
+			zip		   = " "
 			ADPath		   = "OU=321sales,OU=CompanyUsers,OU=Company,DC=Company,DC=com"
 			server		   = "321sales-DS"
 			filePath	   = '\\321fserver\321FL\USERS'
@@ -175,50 +175,50 @@ function New-Employee
 	# Here is a splat for the AD creation. 
 	
 	$AdObject = [PSCustomObject]@{
-		Name				  = $fullName
-		SamAccountName	      = $logonName
-		ChangePasswordAtLogon = $true
-		City				  = $City
-		Company			      = "Company"
-		Country			      = "US"
-		Office			      = $dept
-		Description		      = $job
-		DisplayName		      = $fullName
-		GivenName			  = $first
-		SurName			      = $last
-		EmailAddress		  = $mail
-		State				  = $location
-		StreetAddress		  = $street
-		Officephone		      = $number
-		PostalCode		      = $zip
-		Path				  = $ADPath
-		Department		      = $dept
-		AccountPassword	      = $secPassword
-		Enabled			      = $true
-		Server			      = $server
-		UserPrincipalName	  = "$logonName@company.com"
+		Name			= $fullName
+		SamAccountName	      	= $logonName
+		ChangePasswordAtLogon 	= $true
+		City			= $City
+		Company			= "Company"
+		Country			= "US"
+		Office			= $dept
+		Description		= $job
+		DisplayName		= $fullName
+		GivenName		= $first
+		SurName			= $last
+		EmailAddress		= $mail
+		State			= $location
+		StreetAddress		= $street
+		Officephone		= $number
+		PostalCode		= $zip
+		Path			= $ADPath
+		Department		= $dept
+		AccountPassword	      	= $secPassword
+		Enabled			= $true
+		Server			= $server
+		UserPrincipalName	= "$logonName@company.com"
 	}
 	
 	# And a splat for a new 365 user
 	
 	$MSOlObject = [PSCustomObject]@{
-		UserPrincipalName   = $mail
-		DisplayName		    = $fullName
-		FirstName		    = $first
-		LastName		    = $last
-		Password		    = $msPass
-		UsageLocation	    = "US"
-		Department		    = $dept
-		Office			    = $city
-		PhoneNumber		    = $number
-		title			    = $job
-		City			    = $city
-		State			    = $location
-		PostalCode		    = $zip
-		Country			    = "US"
-		StreetAddress	    = $street
-		ForceChangePassword = $true
-		LicenseAssignment   = "Companynet:SMB_BUSINESS_PREMIUM"
+		UserPrincipalName   	= $mail
+		DisplayName		= $fullName
+		FirstName		= $first
+		LastName		= $last
+		Password		= $msPass
+		UsageLocation	    	= "US"
+		Department		= $dept
+		Office			= $city
+		PhoneNumber		= $number
+		title			= $job
+		City			= $city
+		State			= $location
+		PostalCode		= $zip
+		Country			= "US"
+		StreetAddress	    	= $street
+		ForceChangePassword 	= $true
+		LicenseAssignment   	= "Companynet:SMB_BUSINESS_PREMIUM"
 	}
 	
 	# Instead of hand picking groups, I want to select a user to copy the groups from to apply to our new user here.
@@ -325,7 +325,7 @@ function New-Employee
 			SMTPServer  = "SMTP.office365.com"
 			Port    	= 25
 			From		= $emailFrom
-			To			= $emailTo
+			To		= $emailTo
 			Subject		= "You have created a new employee!"
 			credential	= $cred
 			Body		= "Hello!
